@@ -7,22 +7,40 @@
     <link rel="stylesheet" href="CSS/main.css" />
   </head>
   <body>
+    <div class="social-sidebar">
+      <a href="www.linkedin.com/in/john-olaojo"
+        ><img src="assets/icons/linkedin.png" alt="LinkedIn"
+      /></a>
+      <a href="https://github.com/johnolaojo4"
+        ><img src="assets/icons/github.png" alt="GitHub"
+      /></a>
+      <a href="#"><img src="assets/icons/x.png" alt="Twitter" /></a>
+    </div>
+
     <nav class="navbar">
-      <div class="logo">DevHub</div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="nav-container">
+        <div class="brand">
+          <img src="assets/images/Me.jpg" class="avatar" alt="Avatar" />
+          <span class="name">JOHN OLA-OJO</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
     </nav>
 
-    <header class="hero">
-      <h1>Hi, I'm John Ola-ojo</h1>
-      <p>Front-End Developer & UI Architect</p>
-      <p class="tagline">
-        Building functional, interactive web experiences with pure code.
-      </p>
+    <header id="home" class="hero">
+      <div class="hero-content">
+        <h1>HEY, I'M JOHN OLA-OJO</h1>
+        <p class="hero-desc">
+          A Frontend focused Web Developer building the Frontend of Websites and
+          Web Applications that leads to the success of the overall product
+        </p>
+        <a href="#projects" class="btn-main">PROJECTS</a>
+      </div>
     </header>
 
     <section id="projects" class="project-section">
@@ -57,7 +75,12 @@
     </section>
 
     <footer>
-      <p>© 2026 John Ola-ojo | <a href="#">GitHub Repository</a></p>
+      <p>
+        © 2026 John Ola-ojo |
+        <a href="https://github.com/johnolaojo4/Interactive-Portfolio-Hub.git"
+          >GitHub Repository</a
+        >
+      </p>
     </footer>
 
     <script src="JS/main.js"></script>
