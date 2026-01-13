@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../assets/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../assets/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>BMI Calculator | Health Tool</title>
+    <link rel="stylesheet" href="/CSS/calc-style.css" />
+  </head>
+  <body>
+    <header class="calc-header">
+      <a href="hub.html" class="back-link">← Back to Hub</a>
+      <h1>BMI Calculator</h1>
+    </header>
+
+    <main class="calc-container">
+      <div class="calculator-box bmi-box">
+        <div class="input-group">
+          <label>Weight (kg)</label>
+          <input type="number" id="weight" placeholder="Enter weight" />
+        </div>
+
+        <div class="input-group">
+          <label>Height (cm)</label>
+          <input type="number" id="height" placeholder="Enter height" />
+        </div>
+
+        <button class="btn-main-action" onclick="calculateBMI()">
+          CALCULATE BMI
+        </button>
+
+        <div class="bmi-result-area">
+          <div id="bmi-score">0.0</div>
+          <div id="bmi-category">Enter details above</div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>
+        © 2026 John Ola-ojo |
+        <a
+          href="https://github.com/johnolaojo4/Interactive-Portfolio-Hub.git"
+          target="_blank"
+          class="github-link"
+          ><img src="/assets/icons/github.png" alt="View on GitHub"
+        /></a>
+      </p>
+    </footer>
+
+    <script src="/JS/bmi-script.js"></script>
+  </body>
+</html>

@@ -172,3 +172,60 @@ footer p a {
 .github-link img:hover {
   transform: scale(1.2);
 }
+
+/* BMI Calculator Styling */
+.bmi-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  color: #888;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.input-group input {
+  width: 90%;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background: #111;
+  color: var(--primary-blue);
+  font-size: 1.1rem;
+  outline: none;
+  box-shadow: inset 2px 2px 5px #000;
+}
+
+.btn-main-action {
+  background: var(--primary-blue);
+  color: white;
+  padding: 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px #000;
+}
+
+.bmi-result-area {
+  margin-top: 10px;
+  padding: 20px;
+  background: #111;
+  border-radius: 12px;
+  text-align: center;
+}
+
+#bmi-score {
+  font-size: 3rem;
+  color: var(--primary-blue);
+  font-weight: 900;
+}
+
+/* BMI Calculator Styling End*/
