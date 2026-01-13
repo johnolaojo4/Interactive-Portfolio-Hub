@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="calc-header">
+      <a href="hub.html" class="back-link">← Back to Hub</a>
+      <h1>Scientific Calculator</h1>
+    </header>
+
+    <main class="calc-container">
+      <div class="calculator-box">
+        <div class="calc-display">
+          <div id="previous-op"></div>
+          <input type="text" id="result" readonly value="0" />
+        </div>
+
+        <div class="calc-buttons">
+          <button class="btn-sci" onclick="appendSci('Math.sin')">sin</button>
+          <button class="btn-sci" onclick="appendSci('Math.cos')">cos</button>
+          <button class="btn-sci" onclick="appendSci('Math.tan')">tan</button>
+          <button class="btn-sci" onclick="appendSci('Math.log10')">log</button>
+
+          <button class="btn-util" onclick="clearDisplay()">AC</button>
+          <button class="btn-util" onclick="deleteLast()">DEL</button>
+          <button class="btn-op" onclick="appendSymbol('/')">÷</button>
+          <button class="btn-op" onclick="appendSymbol('*')">×</button>
+
+          <button class="btn-num" onclick="appendNumber('7')">7</button>
+          <button class="btn-num" onclick="appendNumber('8')">8</button>
+          <button class="btn-num" onclick="appendNumber('9')">9</button>
+          <button class="btn-op" onclick="appendSymbol('-')">-</button>
+
+          <button class="btn-num" onclick="appendNumber('4')">4</button>
+          <button class="btn-num" onclick="appendNumber('5')">5</button>
+          <button class="btn-num" onclick="appendNumber('6')">6</button>
+          <button class="btn-op" onclick="appendSymbol('+')">+</button>
+
+          <button class="btn-num" onclick="appendNumber('1')">1</button>
+          <button class="btn-num" onclick="appendNumber('2')">2</button>
+          <button class="btn-num" onclick="appendNumber('3')">3</button>
+          <button class="btn-equal" onclick="calculate()">=</button>
+
+          <button class="btn-num span-two" onclick="appendNumber('0')">
+            0
+          </button>
+          <button class="btn-num" onclick="appendNumber('.')">.</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        © 2026 John Ola-ojo |
+        <a
+          href="https://github.com/johnolaojo4/Interactive-Portfolio-Hub.git"
+          target="_blank"
+          class="github-link"
+          ><img src="/assets/icons/github.png" alt="View on GitHub"
+        /></a>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
