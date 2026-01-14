@@ -34,15 +34,6 @@ function appendSci(func) {
     if (func === 'Math.log10') display.value = Math.log10(parseFloat(currentVal)).toFixed(4);
 }
 
-function calculate() {
-    try {
-        historyDisplay.innerText = display.value + " =";
-        display.value = eval(display.value);
-    } catch (error) {
-        display.value = "Error";
-    }
-}
-
 let calcHistory = JSON.parse(localStorage.getItem('calcHistory')) || [];
 
 function saveToHistory(entry) {

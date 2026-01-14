@@ -21,37 +21,43 @@
       href="../../assets/icons/favicon-16x16.png"
     />
     <link rel="manifest" href="/site.webmanifest" />
-    <title>BMI Calculator | Health Tool</title>
+    <title>Age Calculator | Time Tool</title>
     <link rel="stylesheet" href="../../CSS/calc-style.css" />
   </head>
   <body>
     <header class="calc-header">
       <a href="hub.html" class="back-link">← Back to Hub</a>
-      <h1>BMI Calculator</h1>
+      <h1>Age Calculator</h1>
     </header>
 
     <main class="calc-container">
-      <div class="calculator-box bmi-box">
+      <div class="calculator-box age-box">
         <div class="input-group">
-          <label>Weight (kg)</label>
-          <input type="number" id="weight" placeholder="Enter weight" />
+          <label>Select Date of Birth</label>
+          <input type="date" id="dob-input" />
         </div>
 
-        <div class="input-group">
-          <label>Height (cm)</label>
-          <input type="number" id="height" placeholder="Enter height" />
-        </div>
-
-        <button class="btn-main-action" onclick="calculateBMI()">
-          CALCULATE BMI
+        <button class="btn-main-action" onclick="calculateAge()">
+          CALCULATE AGE
         </button>
 
-        <div class="bmi-result-area">
-          <div id="bmi-score">0.0</div>
-          <div id="bmi-category">Enter details above</div>
+        <div class="age-result-area">
+          <div class="age-unit">
+            <span id="years-res">0</span>
+            <p>Years</p>
+          </div>
+          <div class="age-unit">
+            <span id="months-res">0</span>
+            <p>Months</p>
+          </div>
+          <div class="age-unit">
+            <span id="days-res">0</span>
+            <p>Days</p>
+          </div>
         </div>
       </div>
     </main>
+
     <footer>
       <p>
         © 2026 John Ola-ojo |
@@ -63,8 +69,7 @@
         /></a>
       </p>
     </footer>
-
     <script src="../../JS/script.js"></script>
-    <script src="../../JS/bmi-script.js"></script>
+    <script src="../../JS/age-script.js"></script>
   </body>
 </html>

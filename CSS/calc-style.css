@@ -52,7 +52,8 @@ body {
 }
 
 .calculator-box {
-  width: 360px;
+  width: 100%; 
+  max-width: 360px; 
   background: var(--calc-bg);
   padding: 20px;
   border-radius: 24px;
@@ -229,3 +230,79 @@ footer p a {
 }
 
 /* BMI Calculator Styling End*/
+
+/* Age Calculator Styling */
+.age-box {
+  text-align: center;
+}
+
+.age-result-area {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.age-unit {
+  background: #111;
+  flex: 1;
+  padding: 15px 5px;
+  border-radius: 12px;
+  box-shadow: inset 2px 2px 5px #000;
+  transition: transform 0.3s ease;
+}
+
+.age-unit:hover {
+  transform: scale(1.05);
+}
+
+.age-unit span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--primary-blue);
+  font-family: "Courier New", monospace;
+}
+
+.age-unit p {
+  font-size: 0.7rem;
+  color: #888;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+#dob-input {
+  width: 90%;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background: #111;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  outline: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+#dob-input::-webkit-calendar-picker-indicator {
+  filter: invert(34%) sepia(90%) border-radius(50%) saturate(4000%)
+    hue-rotate(230deg);
+}
+/* Age Calculator Styling End*/
+
+@media (max-width: 480px) {
+  .calc-header {
+    padding: 10px 20px;
+  }
+  .calc-header h1 {
+    font-size: 1.5rem;
+  }
+  .calculator-box {
+    padding: 15px;
+    border-radius: 15px;
+  }
+  #result {
+    font-size: 1.8rem;
+  }
+}
