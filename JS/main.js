@@ -1,26 +1,4 @@
-// 1. Scroll for Navigation Links
-document.querySelectorAll('.nav-links a, .btn-main').forEach(link => {
-    link.addEventListener('click', function(e) {
-        
-        if (this.hash !== "") {
-            const targetId = this.hash;
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                e.preventDefault();
-                const navHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = targetElement.offsetTop - navHeight;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }
-    });
-});
-
-// 2. Copy Email Function 
+// 1. Copy Email Function 
 function copyEmail() {
     const email = "johnoalojoo4@gmail.com"; 
     navigator.clipboard.writeText(email).then(() => {
@@ -36,5 +14,45 @@ function copyEmail() {
         }, 2000);
     }).catch(err => {
         console.error('Failed to copy: ', err);
+    });
+}
+
+// 2. Active Navigation Link on Scroll
+window.addEventListener('scroll', () => {
+    let current = "";
+    const sections = document.querySelectorAll("header, section, footer");
+    
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 150) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.classList.remove("active");
+        if (current && link.getAttribute("href").includes(current)) {
+            link.classList.add("active");
+        }
+    });
+});
+
+// 3. Back to Top Button
+const backToTopBtn = document.getElementById("backToTop");
+
+if (backToTopBtn) {
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add("show");
+        } else {
+            backToTopBtn.classList.remove("show");
+        }
+    });
+
+    backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     });
 }

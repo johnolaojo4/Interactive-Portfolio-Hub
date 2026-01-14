@@ -2,6 +2,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 :root {
@@ -84,6 +85,24 @@ body {
   color: var(--primary-blue);
 }
 
+.nav-links li a.active {
+  color: var(--primary-blue);
+}
+
+.nav-links li:last-child a,
+.nav-links li:last-child a.active {
+  background-color: var(--text-dark);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links li:last-child a:hover {
+  background-color: var(--primary-blue);
+}
+
 /* --- HERO SECTION  --- */
 .hero {
   height: 100vh;
@@ -96,7 +115,7 @@ body {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-size: clamp(2rem, 8vw, 4.5rem);
   font-weight: 900;
   letter-spacing: 2px;
   margin-bottom: 1.5rem;
@@ -121,6 +140,8 @@ h1 {
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, background-color 0.2s;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-main:hover {
@@ -235,9 +256,18 @@ h1 {
 /* --- PROJECTS --- */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
   padding: 80px 5%;
+}
+
+.project-section {
+  width: 90%;
+  padding: 20px;
+}
+
+.project-section h2 {
+  text-align: center;
 }
 
 .project-card {
@@ -254,6 +284,107 @@ h1 {
   border-color: var(--primary-blue);
 }
 
+/* --- SKILLS SECTION --- */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 80px 5%;
+}
+
+.skill-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  width: 180px;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+}
+
+/* --- CONTACT SECTION --- */
+.contact-section {
+  padding: 100px 5%;
+  background-color: var(--white);
+  text-align: center;
+}
+
+.contact-desc {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  color: var(--text-gray);
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  background-color: var(--bg-light);
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+}
+
+/* --- BACK TO TOP BUTTON --- */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+  z-index: 999;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+}
+
+/* --- FOOTER --- */
 footer {
   justify-content: center;
   display: flex;
@@ -266,6 +397,18 @@ footer {
 footer p a {
   text-decoration: none;
   color: #667;
+}
+
+.github-link img {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.github-link img:hover {
+  transform: scale(1.2);
 }
 
 /* --- RESPONSIVENESS --- */

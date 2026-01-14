@@ -3,6 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../assets/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../assets/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>John Ola-ojo Portfolio</title>
     <link rel="stylesheet" href="CSS/main.css" />
   </head>
@@ -27,9 +45,9 @@
         </div>
         <ul class="nav-links">
           <li><a href="#home">HOME</a></li>
-          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#about">ABOUT ME</a></li>
           <li><a href="#projects">PROJECTS</a></li>
-          <li><a href="#contact">CONTACT</a></li>
+          <li><a href="#contact">CONTACT ME</a></li>
         </ul>
       </div>
     </nav>
@@ -66,7 +84,7 @@
     </section>
 
     <section id="projects" class="project-section">
-      <h2>My Projects</h2>
+      <h2>My Latest Project</h2>
       <div class="project-grid">
         <div class="project-card">
           <h3>Recreational Apps</h3>
@@ -92,21 +110,72 @@
       <h2>My Skills</h2>
       <div class="skills-container">
         <div class="skill-card">
-          <img src="" alt="" />
+          <img src="../../assets/icons/html.png" alt="HTML" />
           <span>HTML5</span>
           <p>95%</p>
         </div>
         <div class="skill-card">
-          <img src="" alt="" />
-          <span>CSS5</span>
+          <img src="../../assets/icons/css.png" alt="CSS" />
+          <span>CSS3</span>
           <p>92%</p>
         </div>
         <div class="skill-card">
-          <img src="" alt="" />
+          <img src="../../assets/icons/javascript.png" alt="JavaScript" />
           <span>JAVASCRIPT</span>
           <p>80%</p>
         </div>
+        <div class="skill-card">
+          <img src="../../assets/icons/github.png" alt="GitHub" />
+          <span>GITHUB</span>
+          <p>90%</p>
+        </div>
+        <div class="skill-card">
+          <img src="../../assets/icons/git.png" alt="GIT" />
+          <span>GIT</span>
+          <p>85%</p>
+        </div>
       </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2>Get In Touch</h2>
+      <p class="contact-desc">
+        Have a project in mind or just want to say hi? Feel free to send me a
+        message!
+      </p>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn-main">Send Message</button>
+      </form>
     </section>
 
     <footer>
@@ -120,6 +189,8 @@
         /></a>
       </p>
     </footer>
+
+    <button id="backToTop" class="back-to-top" title="Back to Top">↑</button>
 
     <script src="JS/main.js"></script>
   </body>
