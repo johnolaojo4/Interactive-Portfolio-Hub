@@ -1,0 +1,36 @@
+/* Inherit variables from main.css */
+
+.todo-theme-wrapper {
+  background-color: #e5e5e5; /* The minimalist grey from your theme */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 20px;
+}
+
+.todo-card-container {
+  width: 100%;
+  max-width: 420px;
+}
+
+#rating-field {
+  width: 60px;
+  border-left: 1px solid #eee;
+  text-align: center;
+}
+
+/* Star styling using your primary yellow */
+.movie-stars {
+  color: var(--primary-yellow);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.task-item {
+  transition: transform 0.2s ease;
+}
+
+.task-item:hover {
+  transform: scale(1.02); /* Interactive feedback */
+}
