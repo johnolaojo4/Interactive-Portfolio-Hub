@@ -256,9 +256,10 @@ h1 {
 /* --- PROJECTS --- */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   padding: 80px 5%;
+  width: 100%;
 }
 
 .project-section {
@@ -268,6 +269,7 @@ h1 {
 
 .project-section h2 {
   text-align: center;
+  font-size: 36px;
 }
 
 .project-card {
@@ -286,25 +288,58 @@ h1 {
 
 /* --- SKILLS SECTION --- */
 .skills-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 30px;
-  justify-content: center;
-  padding: 80px 5%;
+  padding: 60px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#skills h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .skill-card {
   background: var(--white);
-  padding: 30px;
+  padding: 30px 20px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   text-align: center;
-  width: 180px;
-  transition: transform 0.3s ease;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out,
+    border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
-.skill-card:hover {
+.skill-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-card.visible:hover {
   transform: translateY(-10px);
+  border-color: var(--primary-blue);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.skill-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 /* --- CONTACT SECTION --- */

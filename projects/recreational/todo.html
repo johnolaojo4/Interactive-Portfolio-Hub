@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../assets/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../assets/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="../../CSS/main.css" />
+    <link rel="stylesheet" href="../../CSS/todo.css" />
+  </head>
+  <body>
+    <header class="calc-header">
+      <a href="../../index.html" class="back-link">← Home</a>
+      <h1>Task Manager</h1>
+    </header>
+
+    <main class="todo-theme-wrapper">
+      <div class="todo-card-container">
+        <h1>TO DO</h1>
+
+        <ul id="taskList" class="theme-list"></ul>
+
+        <div class="theme-input-group">
+          <label>ADD NEW</label>
+          <div class="input-wrapper">
+            <input type="text" id="taskInput" placeholder="Add new todo..." />
+            <button class="add-btn" onclick="addTask()">+</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        © 2026 John Ola-ojo |
+        <a
+          href="https://github.com/johnolaojo4/Interactive-Portfolio-Hub.git"
+          target="_blank"
+          class="github-link"
+          ><img src="/assets/icons/github.png" alt="View on GitHub"
+        /></a>
+      </p>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" title="Back to Top">↑</button>
+
+    <script src="../../JS/todo.js"></script>
+  </body>
+</html>
