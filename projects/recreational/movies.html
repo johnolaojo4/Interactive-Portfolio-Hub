@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -23,8 +23,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <title>Movie Manager</title>
     <link rel="stylesheet" href="../../CSS/main.css" />
-    <link rel="stylesheet" href="../recreational/todo-style.css" />
-    <link rel="stylesheet" href="../../CSS/movies.css" />
+    <link rel="stylesheet" href="../../CSS/movie.css" />
   </head>
   <body>
     <header class="calc-header">
@@ -35,21 +34,37 @@
       <div class="todo-card-container">
         <h1>MOVIES</h1>
 
+        <div class="theme-input-group">
+          <label>SEARCH COLLECTION</label>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by title..."
+          />
+        </div>
+
         <ul id="movieList" class="theme-list"></ul>
 
         <div class="theme-input-group">
-          <label>ADD MOVIE & RATING (1-5)</label>
-          <div class="input-wrapper">
+          <label>ADD MOVIE, RATING & NOTES</label>
+          <div class="input-wrapper" style="flex-direction: column">
             <input type="text" id="movieInput" placeholder="Movie title..." />
-            <input
-              type="number"
-              id="ratingInput"
-              min="1"
-              max="5"
-              placeholder="★"
-              id="rating-field"
-            />
-            <button class="add-btn" onclick="addMovie()">+</button>
+            <textarea
+              id="movieNotes"
+              placeholder="Add a short review/note..."
+              style="border: none; padding: 15px; outline: none"
+            ></textarea>
+            <div style="display: flex; border-top: 1px solid #eee">
+              <input
+                type="number"
+                id="ratingInput"
+                min="1"
+                max="5"
+                placeholder="Rating (1-5)"
+                style="flex: 1"
+              />
+              <button class="add-btn" onclick="addMovie()">ADD</button>
+            </div>
           </div>
         </div>
       </div>

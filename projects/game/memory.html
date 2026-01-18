@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../assets/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../assets/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>Memory Match Game System</title>
+    <link rel="stylesheet" href="../../CSS/main.css" />
+    <link rel="stylesheet" href="game.css" />
+  </head>
+  <body>
+    <header class="calc-header">
+      <a href="../../index.html" class="back-link">← Home</a>
+      <h1>Memory Match</h1>
+    </header>
+
+    <main class="game-container">
+      <div class="game-stats">
+        <div class="stat-box">Time: <span id="timer">0</span>s</div>
+        <div class="stat-box">Flips: <span id="flips">0</span></div>
+        <div class="stat-box">High Score: <span id="highScore">0</span></div>
+      </div>
+
+      <div class="memory-grid" id="gameBoard"></div>
+
+      <button class="btn-main" onclick="resetGame()">Reset Game</button>
+    </main>
+    <footer>
+      <p>
+        © 2026 John Ola-ojo |
+        <a
+          href="https://github.com/johnolaojo4/Interactive-Portfolio-Hub.git"
+          target="_blank"
+          class="github-link"
+          ><img src="/assets/icons/github.png" alt="View on GitHub"
+        /></a>
+      </p>
+    </footer>
+
+    <script src="../../JS/game.js"></script>
+  </body>
+</html>

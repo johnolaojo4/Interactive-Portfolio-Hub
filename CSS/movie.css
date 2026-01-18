@@ -1,53 +1,199 @@
-/* Inherit variables from main.css */
+:root {
+  --theme-bg: #e5e5e5;
+  --card-white: #ffffff;
+  --text-main: #333333;
+  --text-muted: #888888;
+  --primary-yellow: #facd49;
+}
 
 .todo-theme-wrapper {
-  background-color: #e5e5e5; /* The minimalist grey from your theme */
+  background-color: var(--theme-bg);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 80px 20px;
+  font-family: "Inter", sans-serif;
 }
 
 .todo-card-container {
   width: 100%;
-  max-width: 420px;
+  max-width: 450px;
 }
 
-#rating-field {
-  width: 60px;
-  border-left: 1px solid #eee;
+h1 {
   text-align: center;
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin-bottom: 40px;
+  color: var(--text-main);
+  text-transform: uppercase;
 }
 
-/* Star styling using your primary yellow */
-.movie-stars {
+/* Input Area Styling */
+.input-wrapper {
+  display: flex;
+  background: var(--card-white);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--primary-yellow);
+}
+
+#movieInput,
+#searchInput {
+  flex: 1;
+  border: none;
+  padding: 18px 20px;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--text-main);
+  font-family: "Inter", sans-serif;
+}
+
+#ratingInput {
+  width: 70px;
+  border: none;
+  border-left: 1px solid #f0f0f0;
+  padding: 18px 10px;
+  outline: none;
+  text-align: center;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--text-main);
+  font-family: "Inter", sans-serif;
+}
+
+.add-btn {
+  background: transparent;
+  border: none;
+  padding: 0 25px;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  border-left: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-btn:hover {
   color: var(--primary-yellow);
-  font-size: 0.9rem;
-  letter-spacing: 2px;
+  background-color: #fafafa;
+}
+
+/* List Styling */
+#movieList {
+  padding: 0;
+  list-style: none;
 }
 
 .task-item {
-  transition: transform 0.2s ease;
+  background: var(--card-white);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .task-item:hover {
-  transform: scale(1.02); /* Interactive feedback */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 .task-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
 }
 
-.movie-date {
-  font-size: 0.7rem;
-  color: var(--text-muted); /* #888888 */
-  text-transform: uppercase;
+.task-info span {
+  font-weight: 700;
+  color: var(--text-main);
+  font-size: 1.05rem;
 }
 
 .movie-stars {
-  color: #facd49;
-  font-size: 0.9rem;
+  color: var(--primary-yellow);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+
+.movie-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Action Buttons */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actions button {
+  background: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  color: var(--text-main);
+}
+
+.actions button:hover {
+  background: var(--primary-yellow);
+  color: white;
+  transform: scale(1.05);
+}
+
+.actions button:last-child:hover {
+  background: #ff4d4d;
+}
+
+/* Search Bar Specifics */
+#searchInput {
+  width: 100%;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  border: none;
+  padding: 15px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .todo-theme-wrapper {
+    padding: 40px 15px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .task-item {
+    padding: 15px;
+  }
 }

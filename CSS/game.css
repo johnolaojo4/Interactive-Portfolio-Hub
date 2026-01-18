@@ -1,0 +1,43 @@
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  max-width: 600px;
+  margin: 20px auto;
+  perspective: 1000px; /* Essential for 3D flip */
+}
+
+.card {
+  height: 120px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+  background: var(--primary-yellow); /* Branding consistency */
+  color: var(--text-dark);
+}
+
+.card-back {
+  background: white;
+  transform: rotateY(180deg);
+}
