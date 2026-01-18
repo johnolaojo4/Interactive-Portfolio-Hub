@@ -34,3 +34,20 @@
 .task-item:hover {
   transform: scale(1.02); /* Interactive feedback */
 }
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.movie-date {
+  font-size: 0.7rem;
+  color: var(--text-muted); /* #888888 */
+  text-transform: uppercase;
+}
+
+.movie-stars {
+  color: #facd49;
+  font-size: 0.9rem;
+}

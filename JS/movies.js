@@ -2,6 +2,7 @@ const movieInput = document.getElementById('movieInput');
 const ratingInput = document.getElementById('ratingInput');
 const movieList = document.getElementById('movieList');
 
+// Persistence: Load from LocalStorage
 let movies = JSON.parse(localStorage.getItem('movieLibrary')) || [];
 
 function renderMovies() {
@@ -11,13 +12,14 @@ function renderMovies() {
         const li = document.createElement('li');
         li.className = "task-item";
         
-        // Generate stars based on rating
+        // Dynamic Star Rating Logic
         const stars = "★".repeat(movie.rating) + "☆".repeat(5 - movie.rating);
 
         li.innerHTML = `
             <div class="task-info">
                 <span>${movie.title}</span>
-                <small style="color: #facd49;">${stars}</small>
+                <small class="movie-date">Added on: ${movie.date}</small>
+                <small class="movie-stars">${stars}</small>
             </div>
             <button class="delete-btn" onclick="deleteMovie(${index})">🗑️</button>
         `;
@@ -36,7 +38,16 @@ function addMovie() {
         return;
     }
 
-    movies.push({ title: title, rating: rating });
+    // Capture Date and Time
+    const now = new Date();
+    const dateString = now.toLocaleDateString() + ' ' + now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    movies.push({ 
+        title: title, 
+        rating: rating, 
+        date: dateString 
+    });
+
     movieInput.value = "";
     ratingInput.value = "";
     renderMovies();
