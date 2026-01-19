@@ -1,6 +1,6 @@
 Interactive Portfolio Hub: Pure Front-End Web Development Showcase
 
-🔗 Live Hosted Project Link
+🔗 Live Hosted Project Link [https://johnolaojo4.github.io/Interactive-Portfolio-Hub/]
 
 📝 Project Overview
 This project is a professional personal portfolio hub developed as a capstone showcase of front-end mastery. It serves as a central gateway to three distinct interactive systems: a Recreational Suite, a Calculator System, and an Interactive Game System. The entire project is built using only vanilla web technologies to demonstrate core proficiency in DOM manipulation, responsive design, and state management.
