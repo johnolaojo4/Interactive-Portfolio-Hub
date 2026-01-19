@@ -1,9 +1,10 @@
 :root {
   --primary-blue: #4955fa;
-  --calc-bg: #1e1e1e;
-  --screen-bg: #0d0d0d;
-  --btn-gray: #333333;
-  --btn-hover: #444444;
+  --calc-bg: #ffffff;
+  --screen-bg: #f4f4f4;
+  --btn-gray: #e0e0e0;
+  --btn-hover: #d0d0d0;
+  --text-main: #333333;
 }
 
 body {
@@ -17,6 +18,7 @@ body {
 .calc-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 20px 40px;
   width: 100%;
   box-sizing: border-box;
@@ -35,7 +37,8 @@ body {
   color: #333;
   font-weight: 600;
   font-size: 1.5rem;
-  padding: 8px;
+  align-items: center;
+  padding: 12px;
   transition: background-color 0.2s ease;
 }
 
@@ -52,13 +55,12 @@ body {
 }
 
 .calculator-box {
-  width: 100%; 
-  max-width: 360px; 
+  width: 100%;
+  max-width: 360px;
   background: var(--calc-bg);
-  padding: 20px;
-  border-radius: 24px;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
-    inset 0 2px 2px rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 /* The Digital Screen */
@@ -68,8 +70,8 @@ body {
   text-align: right;
   border-radius: 12px;
   margin-bottom: 25px;
-  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.5);
-  border: 1px solid #333;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ddd;
 }
 
 #previous-op {
@@ -84,7 +86,7 @@ body {
   width: 100%;
   background: none;
   border: none;
-  color: #00ff88;
+  color: var(--text-main);
   font-size: 2.2rem;
   text-align: right;
   outline: none;
@@ -103,18 +105,18 @@ button {
   border-radius: 10px;
   border: none;
   background: var(--btn-gray);
-  color: white;
+  color: var(--text-main);
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px #000;
+  box-shadow: 0 4px #bbb;
 }
 
 button:hover {
   background: var(--btn-hover);
   transform: translateY(1px);
-  box-shadow: 0 3px #000;
+  box-shadow: 0 3px #bbb;
 }
 
 button:active {
@@ -124,13 +126,13 @@ button:active {
 
 .btn-op {
   color: var(--primary-blue);
-  background: #2a2a2a;
+  background: #f0f0f0;
 }
 
 .btn-sci {
-  background: #252525;
+  background: #f8f8f8;
   font-size: 0.85rem;
-  color: #999;
+  color: #666;
   text-transform: uppercase;
 }
 
@@ -142,6 +144,7 @@ button:active {
   background: var(--primary-blue);
   grid-row: span 2;
   height: 100%;
+  color: white;
 }
 
 .span-two {
@@ -197,12 +200,12 @@ footer p a {
   width: 90%;
   padding: 15px;
   border-radius: 10px;
-  border: none;
-  background: #111;
+  border: 1px solid #ddd;
+  background: white;
   color: var(--primary-blue);
   font-size: 1.1rem;
   outline: none;
-  box-shadow: inset 2px 2px 5px #000;
+  box-shadow: none;
 }
 
 .btn-main-action {
@@ -212,13 +215,13 @@ footer p a {
   border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 4px #000;
+  box-shadow: 0 4px rgba(0, 0, 0, 0.1);
 }
 
 .bmi-result-area {
   margin-top: 10px;
   padding: 20px;
-  background: #111;
+  background: #f8f8f8;
   border-radius: 12px;
   text-align: center;
 }
@@ -244,11 +247,11 @@ footer p a {
 }
 
 .age-unit {
-  background: #111;
+  background: #f8f8f8;
   flex: 1;
   padding: 15px 5px;
   border-radius: 12px;
-  box-shadow: inset 2px 2px 5px #000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
 }
 
@@ -276,9 +279,9 @@ footer p a {
   width: 90%;
   padding: 15px;
   border-radius: 10px;
-  border: none;
-  background: #111;
-  color: #fff;
+  border: 1px solid #ddd;
+  background: white;
+  color: #333;
   font-family: "Inter", sans-serif;
   outline: none;
   margin-bottom: 10px;
@@ -290,6 +293,118 @@ footer p a {
     hue-rotate(230deg);
 }
 /* Age Calculator Styling End*/
+
+/* --- Calculator Hub Styles --- */
+.hub-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.calc-card {
+  background: var(--calc-bg);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.3s ease;
+  border: 1px solid transparent;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calc-card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 30px 60px rgba(73, 85, 250, 0.15);
+  border-color: var(--primary-blue);
+}
+
+.calc-card .icon {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.calc-card h3 {
+  margin-bottom: 15px;
+  color: var(--text-main);
+  font-size: 1.5rem;
+}
+
+.calc-card p {
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: var(--primary-blue);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s,
+    background-color 0.2s,
+    box-shadow 0.2s;
+  margin-top: auto;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  background-color: #3b46d4;
+  box-shadow: 0 8px 20px rgba(73, 85, 250, 0.3);
+}
+
+/* History Preview Section */
+.history-preview {
+  max-width: 600px;
+  margin: 0 auto 60px;
+  background: white;
+  margin-top: 20px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.history-preview h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+#global-history-list {
+  list-style: none;
+  padding: 0;
+}
+
+#global-history-list li {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-family: "Courier New", monospace;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+}
+
+#global-history-list li:last-child {
+  border-bottom: none;
+}
+
+.empty-msg {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  display: block;
+  width: 100%;
+}
 
 @media (max-width: 480px) {
   .calc-header {

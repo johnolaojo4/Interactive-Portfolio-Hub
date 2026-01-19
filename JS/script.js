@@ -47,7 +47,10 @@ function updateHistoryUI() {
     const historyList = document.getElementById('global-history-list');
     if (historyList) {
         historyList.innerHTML = calcHistory
-            .map(item => `<li>${item}</li>`)
+            .map(item => {
+                const display = item.content ? `${item.type}: ${item.content}` : item;
+                return `<li>${display}</li>`;
+            })
             .join('');
     }
 }
@@ -58,7 +61,7 @@ updateHistoryUI();
 // prevent double decimal and symbols
 document.addEventListener('keydown', (event) => {
     const key = event.key;
-    if (/[0-9]/.test(key)) appendNumber(key);
+    if (/^[0-9]$/.test(key)) appendNumber(key);
     if (["+", "-", "*", "/"].includes(key)) appendSymbol(key);
     if (key === "Enter" || key === "=") calculate();
     if (key === "Backspace") deleteLast();
@@ -69,12 +72,13 @@ function calculate() {
     try {
         let expression = display.value;
         let result = eval(expression);
-        
-        historyDisplay.innerText = expression + " =";
         display.value = result;
+        historyDisplay.innerText = expression + " =";
         
-        // Save to history when result is found
-        saveToHistory(`${expression} = ${result}`);
+        // Correct way to call global history
+        if (typeof saveToGlobalHistory === "function") {
+            saveToGlobalHistory("Scientific", `${expression} = ${result}`);
+        }
     } catch (error) {
         display.value = "Error";
     }

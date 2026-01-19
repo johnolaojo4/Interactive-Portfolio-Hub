@@ -4,7 +4,7 @@
   gap: 15px;
   max-width: 600px;
   margin: 20px auto;
-  perspective: 1000px; /* Essential for 3D flip */
+  perspective: 1000px;
 }
 
 .card {
@@ -33,7 +33,7 @@
 }
 
 .card-front {
-  background: var(--primary-yellow); /* Branding consistency */
+  background: var(--primary-yellow);
   color: var(--text-dark);
 }
 

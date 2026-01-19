@@ -1,44 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recreational Hub | John Ola-ojo</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../assets/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../assets/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../site.webmanifest" />
+    <title>Recreational Hub</title>
     <link rel="stylesheet" href="../../CSS/main.css" />
+    <link rel="stylesheet" href="../../CSS/recreational.css" />
   </head>
-  <body style="background-color: #f5f5f5">
-    <header class="hub-header" style="text-align: center; padding: 60px 0">
-      <a
-        href="../../index.html"
-        class="back-link"
-        style="text-decoration: none; color: #888"
-        >← Back to Home</a
-      >
-      <h1 style="font-size: 3rem; margin-top: 20px">RECREATION</h1>
+  <body class="hub-page">
+    <header class="hub-header">
+      <a href="../../index.html" class="back-link hub-back-link"> Home</a>
+      <h1 class="hub-title">RECREATION HUB</h1>
     </header>
 
-    <main class="project-grid" style="max-width: 900px; margin: 0 auto">
+    <main class="project-grid hub-main-container">
       <div class="project-card">
         <h3>Task Manager</h3>
         <p>Organize your day with persistent task tracking.</p>
-        <a
-          href="todo.html"
-          class="btn-main"
-          style="padding: 15px 40px; margin-top: 20px"
-          >Launch</a
-        >
+        <a href="todo.html" class="btn-main hub-launch-btn">Launch</a>
       </div>
 
       <div class="project-card">
         <h3>Movie Library</h3>
         <p>Track and rate your favorite cinema experiences.</p>
-        <a
-          href="movies.html"
-          class="btn-main"
-          style="padding: 15px 40px; margin-top: 20px"
-          >Launch</a
-        >
+        <a href="movies.html" class="btn-main hub-launch-btn">Launch</a>
       </div>
     </main>
+    <footer>
+      <p>
+        © 2026 John Ola-ojo |
+        <a
+          href="https://github.com/johnolaojo4/Interactive-Portfolio-Hub.git"
+          target="_blank"
+          class="github-link"
+          ><img src="assets/icons/github.png" alt="View on GitHub"
+        /></a>
+      </p>
+    </footer>
   </body>
 </html>

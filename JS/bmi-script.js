@@ -5,6 +5,8 @@ function calculateBMI() {
     if (weight > 0 && height > 0) {
         const bmi = (weight / (height * height)).toFixed(1);
         document.getElementById('bmi-score').innerText = bmi;
+        const resultText = `BMI: ${bmi} (${category})`;
+    saveToGlobalHistory("BMI", resultText);
         
         let category = "";
         let color = "";
@@ -32,4 +34,9 @@ function calculateBMI() {
     } else {
         alert("Please enter valid positive numbers");
     }
+   
+    const resultText = `BMI: ${bmi} (${category})`;
+    
+    // Push to Hub History
+    saveToGlobalHistory("BMI", resultText);
 }

@@ -57,3 +57,47 @@ if (backToTopBtn) {
     });
 }
 
+/**
+ * Global History Manager
+ * Syncs calculations across all calculator sub-projects
+ */
+
+// Function to add a calculation to the global list
+function saveToGlobalHistory(type, result) {
+    let history = JSON.parse(localStorage.getItem('calcHistory')) || [];
+    
+    const newEntry = {
+        type: type, // e.g., "Scientific", "BMI"
+        content: result,
+        timestamp: new Date().toLocaleString([], { hour: '2-digit', minute: '2-digit' })
+    };
+
+    // Keep last 5 entries for preview
+    history.unshift(newEntry);
+    if (history.length > 5) history.pop();
+
+    localStorage.setItem('calcHistory', JSON.stringify(history));
+}
+
+// Function to render the history on the Hub page
+function renderGlobalHistory() {
+    const list = document.getElementById('global-history-list');
+    if (!list) return;
+
+    const history = JSON.parse(localStorage.getItem('calcHistory')) || [];
+
+    if (history.length === 0) {
+        list.innerHTML = '<li class="empty-msg">No recent calculations.</li>';
+        return;
+    }
+
+    list.innerHTML = history.map(item => `
+        <li class="history-item" style="padding: 10px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;">
+            <span><strong>${item.type}:</strong> ${item.content}</span>
+            <span style="color: var(--text-muted); font-size: 0.8rem;">${item.timestamp}</span>
+        </li>
+    `).join('');
+}
+
+// Initialize on Hub load
+document.addEventListener('DOMContentLoaded', renderGlobalHistory);
